@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Credit Card Payment Form</title>
+
+        <!--styles-->
+        <link rel="stylesheet" href="style.css" />
+    </head>
+    <body>
+        
+
+        <div class="container">
+            <form action="#" id="payment-form">
+                <div class="input-box">
+                    <label for="card-number">card number</label>
+                    <input type="text" name="card-number" id="card-number"  minlength="16" maxlength="16" placeholder="xxxx xxxx xxxx xxxx" />
+                </div>
+                <div class="input-box">
+                    <label for="card-holder">card holder</label>
+                    <input type="text" name="card-holder" id="card-holder" />
+                </div>
+                <div class="flex">
+                    <div class="input-box">
+                        <label for="exp-month">expiration month</label>
+                        <select name="exp-month" id="exp-month">
+                            <option value="month" selected disabled>month</option>
+                            <option value="01">January</option>
+                            <option value="03">February</option>
+                            <option value="03">March</option>
+                            <option value="04">April</option>
+                            <option value="05">May</option>
+                            <option value="06">June</option>
+                            <option value="07">July</option>
+                            <option value="08">Agust</option>
+                            <option value="09">September</option>
+                            <option value="10">October</option>
+                            <option value="11">November</option>
+                            <option value="12">December</option>
+                        </select>
+                    </div>
+                    <div class="input-box">
+                        <label for="exp-year">expiration year</label>
+                        <input type="number" name="exp-year" id="exp-year" min="2025" max="2040" placeholder="xxxx" />                           
+                    </div>
+                    <div class="input-box">
+                        <label for="cvv">CVV</label>
+                        <input type="number" name="cvv" id="cvv" placeholder="xxxx" />                           
+                    </div>
+
+                </div>
+                <button type="submit" id="submit-button">Submit</button>
+            </form>
+        </div>
+    </body>
+</html>
