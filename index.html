@@ -7,24 +7,65 @@
 
         <!--styles-->
         <link rel="stylesheet" href="style.css" />
+
+        <!--scripts-->
+        <script src="main.js" defer></script>
     </head>
     <body>
         
-
+        <!--main container-->
         <div class="container">
+            <!--card container-->
+            <div class="card-container">
+                <!--card front-->
+                <div class="front" id="front">
+                    <div class="image">
+                        <img src="./assets/images/chip.png" alt="chip" id="chip-image" />
+                        <img src="./assets/images/visa.png" alt="visa" id="visa-image" />
+                    </div>
+                    <div class="card-number-box" id="card-number-box">
+                        ################
+                    </div>
+                    <div class="flex">
+                        <div class="box">
+                            <span>card holder</span>
+                            <div class="card-holder-name" id="card-holder-name">full name</div>
+                        </div>
+                        <div class="box">
+                            <span>expires</span>
+                            <div class="expiration">
+                                <span class="exp-month" id="exp-mm">mm</span>
+                                <span class="exp-year" id="exp-yy">yyyy</span>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+                <!--card back-->
+                <div class="back" id="back">
+                    <div class="stripe"></div>
+                    <div class="box">
+                        <span>cvv</span>
+                        <div class="cvv-box" id="cvv-box"></div>
+                        <img src="./assets/images/visa.png" alt="visa2" id="image-visa2" />
+                    </div>
+                </div>
+            </div>
+            
+            <!--form inputs-->
             <form action="#" id="payment-form">
                 <div class="input-box">
                     <label for="card-number">card number</label>
-                    <input type="text" name="card-number" id="card-number"  minlength="16" maxlength="16" placeholder="xxxx xxxx xxxx xxxx" />
+                    <input type="text" name="card-number" id="card-number"  minlength="16" maxlength="16" placeholder="xxxx xxxx xxxx xxxx" required />
                 </div>
                 <div class="input-box">
                     <label for="card-holder">card holder</label>
-                    <input type="text" name="card-holder" id="card-holder" />
+                    <input type="text" name="card-holder" id="card-holder" maxlength="20" placeholder="name on card" required />
                 </div>
                 <div class="flex">
                     <div class="input-box">
-                        <label for="exp-month">expiration month</label>
-                        <select name="exp-month" id="exp-month">
+                        <label for="exp-month">month</label>
+                        <select name="exp-month" id="exp-month" required>
                             <option value="month" selected disabled>month</option>
                             <option value="01">January</option>
                             <option value="03">February</option>
@@ -41,12 +82,12 @@
                         </select>
                     </div>
                     <div class="input-box">
-                        <label for="exp-year">expiration year</label>
-                        <input type="number" name="exp-year" id="exp-year" min="2025" max="2040" placeholder="xxxx" />                           
+                        <label for="exp-year">year</label>
+                        <input type="number" name="exp-year" id="exp-year" min="2025" max="2040" placeholder="xxxx" required />                           
                     </div>
                     <div class="input-box">
                         <label for="cvv">CVV</label>
-                        <input type="number" name="cvv" id="cvv" placeholder="xxxx" />                           
+                        <input type="number" name="cvv" id="cvv" placeholder="xxxx" required />                           
                     </div>
 
                 </div>

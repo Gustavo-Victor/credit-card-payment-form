@@ -2,6 +2,21 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
 
 
+/*root and variables*/
+:root {
+    --body-font: "Poppins", sans-serif; 
+    --body-bg-color: #eeeeee;
+    --light-color: #ffffff;
+    --label-color: #999999;
+    --primary-color: #AD5C6B; 
+    --secondary-color: #6C324B; 
+    --primary-text-color: #444444; 
+    --secondary-text-color: #333333;
+    --dark-color: #000000; 
+
+}
+
+
 /*reset*/
 * {
     margin: 0; 
@@ -25,3 +40,223 @@ button, input, select {
 a {
     text-decoration: none;
 }
+
+button, input, select, textarea, label, form {
+    text-transform: uppercase;
+}
+
+
+/*container*/ 
+.container {
+    height: auto;
+    width: 100%; 
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--body-bg-color);
+    padding: 30px 0; 
+
+}
+
+/*form*/
+.container form {
+    background-color: var(--light-color);
+    border-radius: 5px;
+    box-shadow: 0 10px 15px rgba(0,0,0,.1);
+    padding: 15px; 
+    width: 90%; 
+    max-width: 600px; 
+    padding-top: 160px; 
+}
+
+.container form .input-box {
+    margin-top: 20px; 
+}
+
+.container form .input-box label {
+    display: block;
+    color: var(--label-color); 
+    margin-bottom: 5px; 
+}
+
+.container form .input-box input, 
+.container form .input-box select {
+    display: block;
+    width: 100%; 
+    padding: 10px; 
+    border-radius: 10px;
+    border: 1px solid rgba(0,0,0,.1); 
+    color: var(--primary-text-color); 
+}
+
+.container form .flex {
+    display: flex;
+    gap: 15px; 
+    flex-wrap: wrap;
+}
+
+.container form .flex .input-box {
+    min-width: 100%;
+}
+
+.container form #submit-button {
+    width: 100%; 
+    background: linear-gradient(45deg, var(--primary-color), var(--secondary-color));
+    margin-top: 20px; 
+    padding: 10px; 
+    font-size: 1.1rem;
+    color: var(--light-color);
+    border-radius: 10px;
+    transition: .2s all linear;
+    break-before: 5px;
+}
+
+.container form #submit-button:hover {
+    letter-spacing: 2px;
+    opacity: .8;
+}
+
+
+/*card container*/
+.container .card-container {
+    text-transform: uppercase;
+    margin-bottom: -150px; 
+    position: relative; 
+    height: 250px;
+    width: 80%; 
+}
+
+/*front and back*/
+.container .card-container .front,
+.container .card-container .back {
+    position: absolute; 
+    height: 100%;
+    width: 100%;
+    top: 0; 
+    left: 0; 
+    backface-visibility: hidden;
+    background: linear-gradient(45deg, var(--primary-color), var(--secondary-color));
+    border-radius: 5px;
+    box-shadow: 0 15px 25px rgba(0,0,0,.2);
+    transition: transform .4s ease-out;
+    padding: 20px; 
+}
+
+/*front*/
+.container .card-container .front {
+    transform: perspective(1000px) rotateY(0deg);
+}
+
+
+.container .card-container .front .image { 
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    padding-top: 10px; 
+}
+
+.container .card-container .front .image img {
+    height: 30px;
+}
+
+.container .card-container .front .card-number-box {
+    display: inline-block;
+    width: auto;
+    max-width: 100%;
+    word-wrap: break-word; 
+    padding: 30px 0; 
+    font-size: 1.2rem;
+    color: var(--light-color); 
+}
+
+.container .card-container .front .flex { 
+    display: flex;
+}
+
+.container .card-container .front .box:nth-child(1) {
+    margin-right: auto;
+}
+
+.container .card-container .front .box {
+    font-size: 13px;
+    color: var(--light-color);
+    word-wrap: break-word;
+}
+
+/*back*/
+.container .card-container .back {
+    padding: 20px 0;
+    text-align: right;
+    transform: perspective(1000px) rotateY(180deg);
+}
+
+.container .card-container .back .stripe {
+    background-color: var(--dark-color);
+    width: 100%; 
+    margin: 10px 0 ; 
+    height: 50px;
+
+}
+
+.container .card-container .back .box {
+    padding: 0 20px; 
+    font-size: 13px;
+}
+
+.container .card-container .back .box span {
+    color: var(--light-color); 
+}
+
+.container .card-container .back .box .cvv-box {
+    height: 50px;
+    padding: 10px; 
+    margin-top: 5px;
+    color: var(--secondary-text-color); 
+    background-color: var(--light-color);
+    border-radius: 5px;
+    width: 100%; 
+}
+
+.container .card-container .back .box  img {
+    margin-top: 30px; 
+    height: 30px;
+}
+
+
+
+/*media queries*/
+@media only screen and (min-width: 576px) {
+    /*form*/
+    .container form .flex {
+        flex-wrap: wrap;
+    }
+
+    .container form .flex .input-box{
+        flex: 1 1 115px; 
+        min-width: auto;
+    }
+    
+    .container form #submit-button {
+        max-width: 170px; 
+    }
+
+    /*card container*/
+    .container .card-container { 
+        width: 400px; 
+    }
+
+    .container .card-container .front .image img { 
+        height: 50px;
+    }
+
+    .container .card-container .front .card-number-box { 
+        font-size: 1.25rem;
+    }
+
+    .container .card-container .front .flex .box,
+    .container .card-container .back .box { 
+        font-size: 1rem;
+    }
+} 
